@@ -1,11 +1,11 @@
 import * as React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import "./index.css";
 
-let App = () => <div className="your-mom">Your Mom's Template</div>;
+const App = () => <div className="your-mom">Your Mom's Template</div>;
 
-let root = document.createElement("div");
+const container = document.createElement("div");
+window.document.body.appendChild(container);
 
-window.document.body.appendChild(root);
-
-ReactDOM.render(<App />, root);
+const root = createRoot(container);
+root.render(<App />);
